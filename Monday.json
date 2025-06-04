@@ -1,0 +1,105 @@
+{
+    "document": {
+        "type": "APL",
+        "version": "1.1",
+        "mainTemplate": {
+            "parameters": [
+                "payload"
+            ],
+            "items": [
+                {
+                    "type": "Container",
+                    "width": "100vw",
+                    "height": "100vh",
+                    "items": [
+                        {
+                            "type": "Image",
+                            "source": "https://monday-avatar-angela.s3.us-east-1.amazonaws.com/monday-avatar.jpeg",
+                            "scale": "best-fit",
+                            "width": "100vw",
+                            "height": "100vh",
+                            "align": "left"
+                        },
+                        {
+                            "type": "Container",
+                            "position": "absolute",
+                            "left": "425dp",
+                            "top": "40dp",
+                            "alignItems": "flex-start",
+                            "items": [
+                                {
+                                    "type": "Text",
+                                    "text": "${payload.meter.level > 3 ? '🔥 Certified Icon' : '💤 Low Vibes'}",
+                                    "fontSize": "40dp",
+                                    "color": "${payload.meter.level > 3 ? '#FF69B4' : '#00BFFF'}",
+                                    "fontWeight": "bold",
+                                    "textAlign": "right"
+                                },
+                                {
+                                    "type": "Container",
+                                    "paddingTop": "10dp",
+                                    "direction": "row",
+                                    "spacing": "10dp",
+                                    "items": [
+                                        {
+                                            "type": "Frame",
+                                            "height": "80dp",
+                                            "width": "80dp",
+                                            "backgroundColor": "${payload.meter.level >= 1 ? '#FF69B4' : '#666'}",
+                                            "borderRadius": "10dp",
+                                            "borderWidth": "2dp",
+                                            "borderColor": "#00BFFF"
+                                        },
+                                        {
+                                            "type": "Frame",
+                                            "height": "80dp",
+                                            "width": "80dp",
+                                            "backgroundColor": "${payload.meter.level >= 2 ? '#FF69B4' : '#666'}",
+                                            "borderRadius": "10dp",
+                                            "borderWidth": "2dp",
+                                            "borderColor": "#00BFFF"
+                                        },
+                                        {
+                                            "type": "Frame",
+                                            "height": "80dp",
+                                            "width": "80dp",
+                                            "backgroundColor": "${payload.meter.level >= 3 ? '#FF69B4' : '#666'}",
+                                            "borderRadius": "10dp",
+                                            "borderWidth": "2dp",
+                                            "borderColor": "#00BFFF"
+                                        },
+                                        {
+                                            "type": "Frame",
+                                            "height": "80dp",
+                                            "width": "80dp",
+                                            "backgroundColor": "${payload.meter.level >= 4 ? '#FF69B4' : '#666'}",
+                                            "borderRadius": "10dp",
+                                            "borderWidth": "2dp",
+                                            "borderColor": "#00BFFF"
+                                        }
+                                    ]
+                                },
+                                {
+                                    "type": "Text",
+                                    "text": "Unstoppable. Unbothered. Possibly Caffeinated.",
+                                    "color": "#FF69B4",
+                                    "fontSize": "22dp",
+                                    "fontWeight": "700",
+                                    "paddingTop": "80dp",
+                                    "textAlign": "right"
+                                }
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    },
+    "datasources": {
+        "payload": {
+            "meter": {
+                "level": 3
+            }
+        }
+    }
+}
